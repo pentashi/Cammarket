@@ -66,7 +66,7 @@ const Footer2 = () => {
   //       </div>
   //     </div>
       <div className='footerin2'>
-        <h3>© Copyright 2023 Fit Grocery, Inc.  All rights reserved</h3>
+        <h3>© Copyright 202 Cammarket, Inc.  All rights reserved</h3>
         <img src={payimg} alt='payimg' />
       </div>
     // </div>

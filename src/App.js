@@ -15,7 +15,7 @@ import UserProfile from './PAGES/User/UserProfile';
 import FAQ from './PAGES/Extra/FAQ';
 import Termsandconditions from './PAGES/Extra/Termsandconditions';
 import PrivacyPolicy from './PAGES/Extra/PrivacyPolicy';
-const App = () => {
+import { Analytics } from "@vercel/analytics/react"const App = () => {
   return (
     <BrowserRouter>
       <Routes>
