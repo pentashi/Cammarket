@@ -5,6 +5,7 @@ import HomeCategories from '../../COMPONENTS/Category/HomeCategories';
 import Footer1 from '../../COMPONENTS/Footer/Footer1';
 import Footer2 from '../../COMPONENTS/Footer/Footer2';
 import Navbar from '../../COMPONENTS/Navbar/Navbar';
+import './Home.css'; // Import CSS file for additional styling
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -36,7 +37,7 @@ const Home = () => {
 
   return (
     <div>
-      <div>
+      <div className="language-buttons-container">
         <button
           style={language === 'en' ? activeButtonStyle : buttonStyle}
           onClick={() => handleLanguageChange('en')}
@@ -54,15 +55,7 @@ const Home = () => {
       <Navbar reloadnavbar={false} />
       <BannerSlider />
       <HomeCategories />
-      {/* <Product_Sidebar /> */}
       <Footer1 />
-      {/* 
-      <div className='slidercont'>
-        <ProductsSlider products={products} categoryname='Related Products' />
-      </div>
-      <div className='slidercont'>
-        <ProductsSlider products={products} categoryname='Explore More' />
-      </div> */}
       <Footer2 />
     </div>
   );

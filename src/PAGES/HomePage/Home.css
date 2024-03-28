@@ -1,0 +1,25 @@
+.navbar {
+    z-index: 2; /* Ensure the navbar is displayed above other elements */
+    position: relative; /* Set position to relative to allow z-index to work */
+  }
+  
+  .language-buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Add margin at the bottom to create space between the buttons and the navbar */
+    z-index: 3; /* Ensure the buttons are displayed above the navbar */
+    position: relative; /* Set position to relative to allow z-index to work */
+  }
+  
+  @media (max-width: 768px) {
+    .language-buttons-container {
+      flex-direction: column; /* Arrange buttons vertically on small screens */
+      position: fixed; /* Fix the position of the buttons */
+      top: 0; /* Position buttons at the top of the viewport */
+      width: 100%; /* Set full width for the buttons */
+      background-color: #fff; /* Optional: Add background color to create visual separation */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for better visibility */
+      z-index: 3; /* Ensure the buttons are displayed above the navbar */
+    }
+  }
+  
