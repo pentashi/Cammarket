@@ -1,65 +1,49 @@
-import React, { useState } from 'react';
-import './MarketPage.css'
-  
-const MarketPage = () => {
-  const [products, setProducts] = useState([]);
-  const [productName, setProductName] = useState('');
-  const [description, setDescription] = useState('');
-  const [price, setPrice] = useState('');
-  const [totalPrice, setTotalPrice] = useState(0);
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Navbar from '../../COMPONENTS/Navbar/Navbar'
+import './AuthPage.css'
+const ForgotPassword = () => {
+    return (
+        <div className='authpage'>
+            <Navbar reloadnavbar={false}/>
 
-  const handleAddProduct = () => {
-    const newProduct = { productName, description, price: parseFloat(price) || 0 };
-    setProducts([...products, newProduct]);
-    setProductName('');
-    setDescription('');
-    setPrice('');
-    setTotalPrice(totalPrice + (parseFloat(price) || 0));
-  };
+            <div className='authcont'>
+                <img src='https://images.unsplash.com/photo-1495480137269-ff29bd0a695c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80'
+                    alt='signup' />
 
-  const handleSendList = () => {
-    // Code to send the list to your email
-    const emailBody = `
-      Product List:\n
-      ${products.map(product => `${product.productName} - ${product.description} - $${product.price}`).join('\n')}
-      \nTotal Price: $${totalPrice}
-    `;
-    window.location.href = `mailto:achapipentashi@gmail.com?subject=Product List&body=${encodeURIComponent(emailBody)}`;
-  };
+                <form className='authform'>
+                    <h1>Forgot Password</h1>
+                   
+                    <div className='formgroup'>
+                        <label htmlFor='email'>Email</label>
+                        <input type='email' id='email' />
+                    </div>
 
-  return (
-    <div>
-      <h2>Market Page</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Description</th>
-            <th>Price ($)</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((product, index) => (
-            <tr key={index}>
-              <td>{product.productName}</td>
-              <td>{product.description}</td>
-              <td>${product.price}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <div>
-        <input type="text" placeholder="Product Name" value={productName} onChange={e => setProductName(e.target.value)} />
-        <input type="text" placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} />
-        <input type="number" placeholder="Price" value={price} onChange={e => setPrice(e.target.value)} />
-        <button onClick={handleAddProduct}>Add Product</button>
-      </div>
-      <div>
-        <strong>Total Price: ${totalPrice}</strong>
-      </div>
-      <button onClick={handleSendList}>Send List</button>
-    </div>
-  );
-};
+                    <div className='form-group-row'>
+                        <div className='formgroup'>
+                            <label htmlFor='password'>Password</label>
+                            <input type='password' id='password' />
+                        </div>
+                        <div className='formgroup'>
+                        <label htmlFor='cpassword'>Confirm New Password</label>
+                        <input type='password' id='cpassword' />
+                    </div>
+                    </div>
 
-export default MarketPage;
+                    <Link to='/login'
+                        className='stylenone'
+                    >
+                        <p>Try Login again?</p>
+                    </Link>
+                    <Link to='/signup'
+                        className='stylenone'
+                    >
+                        <button className='btn'>Verify</button>
+                    </Link>
+                </form>
+            </div>
+        </div>
+    )
+}
+
+export default ForgotPassword

@@ -29,17 +29,20 @@ const ProductEntryForm = () => {
     });
     setTotalPrice(total);
   };
+const handleSubmit = async () => {
+  // Send product data to backend for email processing
+  try {
+    const response = await axios.post('/api/send-email', { products });
+    console.log('Email sent successfully:', response.data);
+    // Notify user upon successful submission
+    alert('Your product list has been submitted successfully!');
+  } catch (error) {
+    console.error('Error submitting product data:', error);
+    // Handle error
+    alert('Failed to submit product list. Please try again later.');
+  }
+};
 
-  const handleSubmit = async () => {
-    // Send product data to backend
-    try {
-      await axios.post('/api/products', products);
-      // Notify user or redirect upon successful submission
-    } catch (error) {
-      console.error('Error submitting product data:', error);
-      // Handle error
-    }
-  };
 
   return (
     <div className="product-entry-form">

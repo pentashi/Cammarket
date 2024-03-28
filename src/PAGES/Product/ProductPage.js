@@ -9,8 +9,12 @@ import Footer1 from '../../COMPONENTS/Footer/Footer1'
 import Footer2 from '../../COMPONENTS/Footer/Footer2'
 import Navbar from '../../COMPONENTS/Navbar/Navbar'
 import ProductsSlider from '../../COMPONENTS/Product/ProductsSlider'
+import { useTranslation } from 'react-i18next';
+
 import './ProductPage.css'
 const ProductPage = () => {
+    const { t, i18n } = useTranslation();
+
     const { prodid } = useParams()
     const [imageset, setimageset] = React.useState(null)
     const [productdata, setproductdata] = React.useState([])
