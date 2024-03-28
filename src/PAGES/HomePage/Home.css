@@ -1,25 +1,40 @@
-.navbar {
-    z-index: 2; /* Ensure the navbar is displayed above other elements */
-    position: relative; /* Set position to relative to allow z-index to work */
+.language-dropdown-container {
+    position: relative;
+    display: inline-block;
   }
   
-  .language-buttons-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px; /* Add margin at the bottom to create space between the buttons and the navbar */
-    z-index: 3; /* Ensure the buttons are displayed above the navbar */
-    position: relative; /* Set position to relative to allow z-index to work */
+  .language-dropdown-toggle {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
   }
   
-  @media (max-width: 768px) {
-    .language-buttons-container {
-      flex-direction: column; /* Arrange buttons vertically on small screens */
-      position: fixed; /* Fix the position of the buttons */
-      top: 0; /* Position buttons at the top of the viewport */
-      width: 100%; /* Set full width for the buttons */
-      background-color: #fff; /* Optional: Add background color to create visual separation */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for better visibility */
-      z-index: 3; /* Ensure the buttons are displayed above the navbar */
-    }
+  .language-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .language-dropdown-content button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .language-dropdown-content button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .language-dropdown-container:hover .language-dropdown-content {
+    display: block;
   }
   

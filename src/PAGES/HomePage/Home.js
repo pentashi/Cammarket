@@ -5,51 +5,35 @@ import HomeCategories from '../../COMPONENTS/Category/HomeCategories';
 import Footer1 from '../../COMPONENTS/Footer/Footer1';
 import Footer2 from '../../COMPONENTS/Footer/Footer2';
 import Navbar from '../../COMPONENTS/Navbar/Navbar';
-import './Home.css'; // Import CSS file for additional styling
+import './Home.css'; // Assuming you have a CSS file for styling
 
 const Home = () => {
   const { t, i18n } = useTranslation();
   const [language, setLanguage] = useState('en');
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const handleLanguageChange = (selectedLanguage) => {
     setLanguage(selectedLanguage);
     i18n.changeLanguage(selectedLanguage);
+    setShowDropdown(false); // Close the dropdown after selecting a language
   };
 
-  const buttonStyle = {
-    padding: '10px 20px',
-    margin: '5px',
-    fontSize: '16px',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    border: 'none',
-    outline: 'none',
-    backgroundColor: '#f0f0f0',
-    color: '#333',
-    boxShadow: '0px 0px 5px rgba(0, 0, 0, 0.1)',
-  };
-
-  const activeButtonStyle = {
-    ...buttonStyle,
-    backgroundColor: '#007bff',
-    color: '#fff',
+  const toggleDropdown = () => {
+    setShowDropdown((prevState) => !prevState); // Toggle dropdown visibility
   };
 
   return (
     <div>
-      <div className="language-buttons-container">
-        <button
-          style={language === 'en' ? activeButtonStyle : buttonStyle}
-          onClick={() => handleLanguageChange('en')}
-        >
-          English
+      <div className="language-dropdown-container">
+        <button className="language-dropdown-toggle" onClick={toggleDropdown}>
+          {language.toUpperCase()}
         </button>
-        <button
-          style={language === 'fr' ? activeButtonStyle : buttonStyle}
-          onClick={() => handleLanguageChange('fr')}
-        >
-          French
-        </button>
+        {showDropdown && (
+          <div className="language-dropdown-content">
+            <button onClick={() => handleLanguageChange('en')}>English</button>
+            <button onClick={() => handleLanguageChange('fr')}>French</button>
+          </div>
+        )}
       </div>
 
       <Navbar reloadnavbar={false} />
