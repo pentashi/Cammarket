@@ -1,0 +1,48 @@
+{
+    "faq": [
+      {
+        "id": 1,
+        "question": "What is CamMarket?",
+        "answer": "CamMarket is an online platform that connects local vendors and supermarkets with shoppers in Cameroon. It offers a wide range of products including fresh produce, groceries, household essentials, and specialty items, allowing users to conveniently browse and purchase items from the comfort of their homes."
+      },
+      {
+        "id": 2,
+        "question": "Why choose CamMarket?",
+        "answer": "CamMarket offers several benefits including a diverse selection of products sourced directly from local vendors and supermarkets, reliable delivery services with orders delivered to your doorstep, and exceptional customer service to assist you with any inquiries or concerns. Additionally, CamMarket is committed to promoting sustainability and environmental stewardship."
+      },
+      {
+        "id": 3,
+        "question": "How does CamMarket work?",
+        "answer": "CamMarket provides users with an intuitive online platform where they can browse products, add items to their cart, and proceed to checkout. Once the order is placed, CamMarket processes the order and arranges for delivery to the customer's preferred location. Users can track their orders and communicate with customer support if needed."
+      },
+      {
+        "id": 4,
+        "question": "Is CamMarket available nationwide?",
+        "answer": "Currently, CamMarket operates in select cities and regions in Cameroon. However, we are continuously expanding our services to reach more customers across the country. Stay tuned for updates on our expansion plans!"
+      },
+      {
+        "id": 5,
+        "question": "How can I contact CamMarket?",
+        "answer": "For any inquiries, feedback, or assistance, you can reach out to CamMarket customer support through our contact page on the website. Our dedicated team is available to assist you and ensure your shopping experience is seamless and enjoyable."
+      }
+    ],
+    
+        "First Name": "First Name",
+        "Last Name": "Last Name",
+        "Email": "Email",
+        "Password": "Password",
+        "Confirm Password": "Confirm Password",
+        "Already have an account?": "Already have an account?",
+        "Signup": "Signup",
+        
+            "Login": "Login",
+            "Email": "Email",
+            "Password": "Password",
+            "Forgot password?": "Forgot password?",
+            "Signup": "Signup"
+          
+          
+      
+      
+  }
+  
