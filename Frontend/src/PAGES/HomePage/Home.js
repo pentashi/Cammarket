@@ -10,40 +10,24 @@ import Navbar from '../../COMPONENTS/Navbar/Navbar';
 const Home = () => {
   const { t, i18n } = useTranslation();
   const [language, setLanguage] = useState('en');
-  const [showDropdown, setShowDropdown] = useState(false);
 
   const handleLanguageChange = (selectedLanguage) => {
     setLanguage(selectedLanguage);
     i18n.changeLanguage(selectedLanguage);
-    setShowDropdown(false); // Close the dropdown after selecting a language
-  };
-
-  const toggleDropdown = () => {
-    setShowDropdown((prevState) => !prevState); // Toggle dropdown visibility
   };
 
   return (
     <div>
-      <div className="language-dropdown-container">
-
-{//this is the change of button
-}
-        {/* <button className="language-dropdown-toggle" onClick={toggleDropdown}>
-          {language.toUpperCase()}
-        </button> */}
-        {/* {showDropdown && (
-          <div className="language-dropdown-content">
-            <button onClick={() => handleLanguageChange('en')}>English</button>
-            <button onClick={() => handleLanguageChange('fr')}>French</button>
-          </div>
-        )} */}
-      </div>
-
       <Navbar reloadnavbar={false} />
       <BannerSlider />
       <HomeCategories />
       <Footer1 />
       <Footer2 />
+      <div className="language-toggle-container">
+        <button className="language-toggle-button" onClick={() => handleLanguageChange(language === 'en' ? 'fr' : 'en')}>
+          {language === 'en' ? 'Français' : 'English'}
+        </button>
+      </div>
     </div>
   );
 };
